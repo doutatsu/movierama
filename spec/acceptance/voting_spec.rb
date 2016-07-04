@@ -9,16 +9,8 @@ RSpec.describe 'vote on movies', type: :feature do
   let(:page) { Pages::MovieList.new }
 
   before do
-    author = User.create(
-      uid:  'null|12345',
-      name: 'Bob'
-    )
-    Movie.create(
-      title:        'Empire strikes back',
-      description:  'Who\'s scruffy-looking?',
-      date:         '1980-05-21',
-      user:         author
-    )
+    author = Fabricate(:user, uid: 'null|12345', name: 'Bob', email: 'bob@test.com').save
+    Fabricate(:movie, title: 'Empire strikes back', description: 'Who\'s scruffy-looking?', date: '1980-05-21', user: author).save
   end
 
   context 'when logged out' do
