@@ -8,6 +8,10 @@ class User < BaseModel
   index     :uid
   unique    :uid
 
+  # Email
+  attribute :email
+  unique    :email
+
   # Session token
   attribute :token
   index     :token
