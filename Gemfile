@@ -25,19 +25,16 @@ gem 'ohm-contrib'
 # ♥︎ thin models
 gem 'draper'
 
+gem 'rest-client' # Console REST client
+
 # Use Redis as cache
 gem 'redis-rails'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.6'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
-# Use Haml for views
-gem 'haml-rails'
+gem 'rails', '4.1.6'           # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'sass-rails', '~> 4.0.3'   # Use SCSS for stylesheets
+gem 'uglifier', '>= 1.3.0'     # Use Uglifier as compressor for JavaScript assets
+gem 'coffee-rails', '~> 4.0.0' # Use CoffeeScript for .js.coffee assets and views
+gem 'haml-rails'               # Use Haml for views
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -47,21 +44,21 @@ gem 'turbolinks'
 # UX building blocks
 gem 'bootstrap-sass'
 
-
-gem 'omniauth' # Authentication
+# Authentication
+gem 'omniauth' 
 gem 'omniauth-github'
-gem 'cancan'   # Authorisation
-
+gem 'cancan'   # Authorisation using abilities
 
 # Debugger
 gem 'pry'
 gem 'pry-nav'
 gem 'pry-doc'
 
-
 group :test do
   gem 'guard-rspec'    # Continuous testing
   gem 'rspec-rails'    # Test framework with Rail extensions
   gem 'poltergeist'    # Driver for PhantomJS headless browser
   gem 'capybara'       # DSL for browser control
+  gem 'fabrication'
+  gem 'faker'
 end
