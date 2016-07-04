@@ -3,6 +3,8 @@ class VotesController < ApplicationController
     authorize! :vote, _movie
 
     _voter.vote(_type)
+    MovieMailer.movie_notification(User[_movie.user_id], _movie, _type).deliver
+
     redirect_to root_path, notice: 'Vote cast'
   end
 
@@ -10,6 +12,8 @@ class VotesController < ApplicationController
     authorize! :vote, _movie
 
     _voter.unvote
+    MovieMailer.movie_notification(User[_movie.user_id], _movie, 'hate').deliver
+
     redirect_to root_path, notice: 'Vote withdrawn'
   end
 
